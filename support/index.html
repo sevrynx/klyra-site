@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Support · Klyra</title>
+  <meta name="description" content="Get help with your Klyra account and apps: sign-in, recovery key, deleting your account, sync, Android installs and reporting a bug.">
+  <meta name="theme-color" content="#FBFAFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#13101F" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/img/klyra-192.png">
+  <link rel="preload" href="/assets/Nunito.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <a class="brand" href="/" aria-label="Klyra home">
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16" fill="#5B3BD6"/><g fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17v30" stroke="#FFFFFF"/><path d="M43 17 23 33" stroke="#CFBFFF"/><path d="M28 31l15 16" stroke="#FFD84D"/></g></svg>
+    Klyra
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a class="hide-sm" href="/#apps">Apps</a>
+    <a class="hide-sm" href="/support/" aria-current="page">Support</a>
+    <a class="btn ghost" href="/account/#/sign-in">Login</a>
+    <a class="btn primary" href="/account/#/sign-in?mode=create">Create account</a>
+  </nav>
+</header>
+
+<main id="main">
+  <article class="doc">
+    <h1>Support</h1>
+    <p>We read every message. Write to the address that fits, and tell us which app you use.</p>
+
+    <div class="box c-tint-lilac">
+      <p><b>Help with an app or your account:</b> <a href="mailto:support@klyra.cc">support@klyra.cc</a></p>
+      <p><b>Anything else</b> (feedback, press, other questions): <a href="mailto:contact@klyra.cc">contact@klyra.cc</a></p>
+    </div>
+
+    <ul class="toc" aria-label="On this page">
+      <li><a href="#account">Your account</a></li>
+      <li><a href="#password">Forgot password</a></li>
+      <li><a href="#recovery">Recovery key</a></li>
+      <li><a href="#delete">Delete account</a></li>
+      <li><a href="#sync">Sync and offline</a></li>
+      <li><a href="#android">Android</a></li>
+      <li><a href="#bug">Report a bug</a></li>
+      <li><a href="#apps">Per-app help</a></li>
+    </ul>
+
+    <h2 id="account">Your Klyra account</h2>
+
+    <details>
+      <summary>What is a Klyra account?</summary>
+      <p>One login for all Klyra apps. You sign in with your email and a password. Your data is encrypted with keys made from that password on your device, so the server only holds scrambled data.</p>
+      <p>You can manage your account at <a href="/account/">klyra.cc/account</a>: change your password, sign out, or delete your account.</p>
+    </details>
+
+    <details>
+      <summary>Do I need an account?</summary>
+      <p>No. Every app works as a guest: choose "Continue as guest". Your data then stays on that device only and isn't backed up. If you sign in later, your guest data is added to your account.</p>
+      <p>An account gives you sync between devices and a copy that survives losing your phone.</p>
+    </details>
+
+    <details>
+      <summary>I didn't get the confirmation email</summary>
+      <p>Check your spam folder first. Then try to create the account again after a few minutes. If it still doesn't arrive, write to <a href="mailto:support@klyra.cc">support@klyra.cc</a> from the address you signed up with.</p>
+      <p>After you open the link in the email, you land on the account page. Then sign in. Your recovery key is shown at your first sign-in.</p>
+    </details>
+
+    <h2 id="password">Forgot your password</h2>
+    <p>Use <b>Forgot password?</b> on the sign-in screen of any app, or on <a href="/account/#/sign-in">the account page</a>. Type your email and we send you a link. Open it, then enter your <a href="#recovery">recovery key</a> and choose a new password.</p>
+    <div class="box c-tint-peach">
+      <p><b>You need the recovery key.</b> Your data is locked with your password. Without your password <em>and</em> your recovery key, nobody can restore your encrypted data, not even us.</p>
+    </div>
+
+    <h2 id="recovery">Your recovery key</h2>
+    <p>It starts with <code>KNR1-</code> and is shown once, when you create your account. We never see it and can't make a new one for you.</p>
+    <ul>
+      <li>Save it in a password manager, or print it and keep it somewhere safe.</li>
+      <li>You need it only if you forget your password.</li>
+      <li>Keep it private. With the key and a reset email, someone could set a new password for your account.</li>
+    </ul>
+
+    <h2 id="delete">Delete your account</h2>
+    <p>In any Klyra app, open <b>Me</b> and look under <b>Account and privacy</b> for <b>Delete account</b>. You can also do it on <a href="/account/#/sign-in">the account page</a>.</p>
+    <ol>
+      <li>Enter your password.</li>
+      <li>Type this phrase: <code>Delete my data from all klyra apps</code> (capital letters don't matter).</li>
+      <li>Tap the delete button. It stays off until both are right.</li>
+    </ol>
+    <div class="box c-tint-bubblegum">
+      <p><b>This can't be undone.</b> One account is shared by all Klyra apps, so deleting it erases your data from <b>all</b> of them, on every device. Your recovery key won't bring it back.</p>
+    </div>
+
+    <h2 id="sync">Sync and offline</h2>
+    <ul>
+      <li>Your data is saved on your device first, so the apps work without a connection.</li>
+      <li>When you are online and signed in, changes are synced in the background: about once a minute, when you come back to the app, and after you make a change.</li>
+      <li>If the app says changes are waiting on the phone, they will sync when you are back online. Look under <b>Me</b> for the sync row in apps that have one.</li>
+      <li>Guest data is never synced. It stays on the device until you sign in.</li>
+    </ul>
+
+    <h2 id="android">Android: install and update</h2>
+    <ul>
+      <li>Our Android apps are downloaded from each app's own website, not from an app store. Each app page has a download button and install steps.</li>
+      <li>Android may ask you to allow installs from your browser. That's expected for apps outside a store.</li>
+      <li>Updates: the app checks its own website for a new version and tells you inside the app. Tap the message to download and install it.</li>
+      <li>If Android says the update can't be installed over the old app, or a page says the signing key changed, uninstall the old version and install the new one. Sign in first and let it sync, because guest data on the device is removed when you uninstall.</li>
+    </ul>
+
+    <h2 id="bug">Report a bug</h2>
+    <p>Email <a href="mailto:support@klyra.cc">support@klyra.cc</a> and include:</p>
+    <ul>
+      <li>Which app, and its version (Android or web).</li>
+      <li>Your device and Android version, or your browser.</li>
+      <li>What you did, what you expected, and what happened instead. A screenshot helps.</li>
+      <li>Whether you were signed in or a guest, and whether you were online.</li>
+    </ul>
+    <p><b>Never send your password or your recovery key.</b> We will never ask for them.</p>
+
+    <h2 id="apps">Help for each app</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">App</th><th scope="col">Where</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Kinn</th><td><a href="https://kinn.klyra.cc">kinn.klyra.cc</a> · <a href="https://kinn.klyra.cc/app/">web app</a> · <a href="https://kinn.klyra.cc/android/">Android download</a></td></tr>
+          <tr><th scope="row">Klyra Weather</th><td><a href="https://weather.klyra.cc">weather.klyra.cc</a></td></tr>
+          <tr><th scope="row">Klyra Contacts</th><td><a href="https://contacts.klyra.cc">contacts.klyra.cc</a> (Android)</td></tr>
+          <tr><th scope="row">Klyra Orbit</th><td><a href="https://orbit.klyra.cc">orbit.klyra.cc</a> (Android)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Inside the apps, <b>Me</b> has a Help section with the support address.</p>
+  </article>
+</main>
+
+<footer class="foot">
+  <nav aria-label="Footer">
+    <a href="/#apps">Apps</a>
+    <a href="/account/">Account</a>
+    <a href="/support/">Support</a>
+    <a href="/privacy/">Privacy</a>
+  </nav>
+  <p>Klyra makes private apps. Help: <a href="mailto:support@klyra.cc">support@klyra.cc</a> · Everything else: <a href="mailto:contact@klyra.cc">contact@klyra.cc</a></p>
+  <p class="small">Font: Nunito, SIL Open Font License.</p>
+</footer>
+</body>
+</html>

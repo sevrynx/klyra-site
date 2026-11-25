@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Privacy · Klyra</title>
+  <meta name="description" content="What Klyra's server stores, what it can't read, and which other services are involved. Plain language.">
+  <meta name="theme-color" content="#FBFAFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#13101F" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/img/klyra-192.png">
+  <link rel="preload" href="/assets/Nunito.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <a class="brand" href="/" aria-label="Klyra home">
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16" fill="#5B3BD6"/><g fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17v30" stroke="#FFFFFF"/><path d="M43 17 23 33" stroke="#CFBFFF"/><path d="M28 31l15 16" stroke="#FFD84D"/></g></svg>
+    Klyra
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a class="hide-sm" href="/#apps">Apps</a>
+    <a class="hide-sm" href="/support/">Support</a>
+    <a class="btn ghost" href="/account/#/sign-in">Login</a>
+    <a class="btn primary" href="/account/#/sign-in?mode=create">Create account</a>
+  </nav>
+</header>
+
+<main id="main">
+  <article class="doc">
+    <h1>Privacy</h1>
+    <p class="updated">Last updated: 2026-11-23</p>
+    <p>This page explains what happens to your data in Klyra apps and on this site. It covers Kinn, Klyra Weather, Klyra Contacts and Klyra Orbit.</p>
+
+    <h2 id="short">The short version</h2>
+    <ul>
+      <li>What you save in an app is encrypted on your device before it is sent anywhere. Our server stores the scrambled result and can't read it.</li>
+      <li>Your password is never sent to us. It is turned into keys on your device.</li>
+      <li>Signing in is optional. As a guest, your data stays on your device.</li>
+      <li>There are no ads, no analytics and no trackers on this site or in the apps.</li>
+      <li>We don't sell data. We don't have your readable data to sell.</li>
+    </ul>
+
+    <h2 id="stores">What our server stores</h2>
+    <p>If you create a Klyra account, the server (Supabase) holds:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">What</th><th scope="col">Why</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Your email address</th><td>To sign you in and to send account emails.</td></tr>
+          <tr><th scope="row">A login secret made from your password</th><td>Not your password. Your device derives it, and the login service stores only a protected form of it.</td></tr>
+          <tr><th scope="row">Password-stretching settings (a salt and cost numbers)</th><td>So any of your devices can turn your password into the same keys.</td></tr>
+          <tr><th scope="row">Your master key, locked twice</th><td>One copy is locked with a key from your password, one with your recovery key. Without those, it is random-looking bytes.</td></tr>
+          <tr><th scope="row">Your encrypted records</th><td>What each app saves for you, as encrypted blobs of data with a random id, a version number and the date of the last change.</td></tr>
+          <tr><th scope="row">Timestamps</th><td>When your account and keys were created or changed.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The server also knows which Klyra apps have stored something for you, because each app keeps its records in its own place. It knows roughly how much you store, and when you last synced.</p>
+
+    <h2 id="cant">What our server can't read</h2>
+    <ul>
+      <li>Your password and your recovery key.</li>
+      <li>The content of your records: your todos, habits, goals and feelings in Kinn, your saved places in Klyra Weather, your contacts in Klyra Contacts.</li>
+      <li>Your display name. It is saved inside an encrypted record.</li>
+      <li>Guest data. It never leaves your device.</li>
+    </ul>
+    <p>This also means we can't reset your password or restore your data for you. If you lose both your password and your recovery key, the data is gone.</p>
+
+    <h2 id="orbit">Klyra Orbit</h2>
+    <p>Orbit shares live location between people who invite each other. It is designed so the server sees as little as possible: random ids, hashes of access codes, encrypted messages of a few fixed sizes, and the times they were written. There is no list of who knows whom on the server, and no names or locations in readable form. The server does learn that your account uses the sharing service and when it makes calls.</p>
+
+    <h2 id="on-device">What stays on your device</h2>
+    <ul>
+      <li>Your unlocked key. On Android it is kept in the system's secure storage so the app opens without your password. On the web it is kept in memory only, so you sign in again after closing the tab.</li>
+      <li>A copy of your records, encrypted, so the apps work offline.</li>
+      <li>In Klyra Contacts, your call log. It is not synced.</li>
+    </ul>
+
+    <h2 id="others">Other services involved</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Service</th><th scope="col">What it does</th><th scope="col">What it can see</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Supabase</th><td>Hosts accounts and the encrypted data.</td><td>Everything in the table above, and your IP address when your device connects.</td></tr>
+          <tr><th scope="row">GitHub Pages</th><td>Serves klyra.cc and the app sites, web apps and Android downloads. Android apps also fetch a small version file from their site to check for updates.</td><td>Normal web request details such as your IP address and browser.</td></tr>
+          <tr><th scope="row">Resend</th><td>Sends account emails, such as the confirmation and password reset links.</td><td>Your email address and the email it sends.</td></tr>
+          <tr><th scope="row">Open-Meteo</th><td>Klyra Weather asks it for forecasts and for place search.</td><td>The coordinates of the places you follow, the text you type when searching for a place, and your IP address. Your device asks Open-Meteo directly. Weather data is by <a href="https://open-meteo.com/">Open-Meteo</a>, CC BY 4.0.</td></tr>
+          <tr><th scope="row">OpenStreetMap</th><td>Klyra Orbit loads map tiles.</td><td>Which map tiles your device requests, so roughly the area you look at, and your IP address.</td></tr>
+          <tr><th scope="row">Google Fonts</th><td>The Kinn and Klyra Weather web apps can load a fallback font for a character their own font doesn't have.</td><td>Only if that happens: the request and your IP address. The account page at klyra.cc/account and this site don't do this.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="site">This website</h2>
+    <p>This site is plain pages with no scripts, no cookies, no analytics and no requests to other sites. Its font is served from the site itself. If you open a link to another site or to an app, that site's own rules apply.</p>
+
+    <h2 id="control">Your control</h2>
+    <ul>
+      <li><b>Use a guest.</b> Nothing leaves your device.</li>
+      <li><b>Delete your account.</b> In any app under Me, Account and privacy, or on <a href="/account/#/sign-in">the account page</a>. It deletes your data from all Klyra apps. See <a href="/support/#delete">Support</a>.</li>
+      <li><b>Ask us.</b> Write to <a href="mailto:support@klyra.cc">support@klyra.cc</a> or <a href="mailto:contact@klyra.cc">contact@klyra.cc</a>.</li>
+    </ul>
+  </article>
+</main>
+
+<footer class="foot">
+  <nav aria-label="Footer">
+    <a href="/#apps">Apps</a>
+    <a href="/account/">Account</a>
+    <a href="/support/">Support</a>
+    <a href="/privacy/">Privacy</a>
+  </nav>
+  <p>Klyra makes private apps. Help: <a href="mailto:support@klyra.cc">support@klyra.cc</a> · Everything else: <a href="mailto:contact@klyra.cc">contact@klyra.cc</a></p>
+  <p class="small">Font: Nunito, SIL Open Font License.</p>
+</footer>
+</body>
+</html>

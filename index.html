@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Static page: no inline code, nothing loaded from other sites. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Klyra: private apps, one account</title>
+  <meta name="description" content="Klyra makes private, end-to-end encrypted, offline-first apps. One Klyra account works in all of them, and every app works as a guest too.">
+  <meta name="theme-color" content="#FBFAFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#13101F" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Klyra">
+  <meta property="og:description" content="Private, end-to-end encrypted, offline-first apps. One account for all of them.">
+  <meta property="og:image" content="https://klyra.cc/img/klyra-512.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/img/klyra-192.png">
+  <link rel="preload" href="/assets/Nunito.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <a class="brand" href="/" aria-label="Klyra home">
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="16" fill="#5B3BD6"/><g fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17v30" stroke="#FFFFFF"/><path d="M43 17 23 33" stroke="#CFBFFF"/><path d="M28 31l15 16" stroke="#FFD84D"/></g></svg>
+    Klyra
+  </a>
+  <nav class="nav" aria-label="Main">
+    <a class="hide-sm" href="/#apps">Apps</a>
+    <a class="hide-sm" href="/support/">Support</a>
+    <a class="btn ghost" href="/account/#/sign-in">Login</a>
+    <a class="btn primary" href="/account/#/sign-in?mode=create">Create account</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <p class="pill">Private · End-to-end encrypted · Offline-first</p>
+    <h1>Apps that keep your life <span class="hl">to yourself.</span></h1>
+    <p class="lead">Klyra makes small, careful apps. What you save is encrypted on your device before it syncs, so our server only holds scrambled data. One Klyra account works in every app.</p>
+    <div class="cta">
+      <a class="btn primary big" href="/account/#/sign-in?mode=create">Create account</a>
+      <a class="btn ghost big" href="/account/#/sign-in">Login</a>
+    </div>
+    <p class="small">You don't need an account. Every app works as a guest, and your data moves into your account when you sign in later.</p>
+  </section>
+
+  <section id="apps" aria-labelledby="apps-title">
+    <h2 id="apps-title">Our apps</h2>
+    <p class="sub">Sign in with the same account in each one, or use them as a guest.</p>
+    <div class="grid">
+      <article class="app">
+        <div class="app-head">
+          <img src="/img/apps/kinn.png" alt="" width="56" height="56">
+          <div>
+            <h3>Kinn</h3>
+            <p class="platforms">Web · Android</p>
+          </div>
+        </div>
+        <p class="pitch">A private planner for todos, habits and goals, and how they make you feel.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://kinn.klyra.cc" aria-label="Open Kinn">Open Kinn</a>
+          <a class="btn ghost" href="https://kinn.klyra.cc/app/" aria-label="Kinn web app">Web app</a>
+          <a class="btn ghost" href="https://kinn.klyra.cc/android/" aria-label="Kinn for Android">Android</a>
+        </div>
+      </article>
+
+      <article class="app">
+        <div class="app-head">
+          <img src="/img/apps/weather.png" alt="" width="56" height="56">
+          <div>
+            <h3>Klyra Weather</h3>
+            <p class="platforms">Web · Android</p>
+          </div>
+        </div>
+        <p class="pitch">A clean forecast for the places you follow, with home-screen widgets. Weather data by Open-Meteo.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://weather.klyra.cc" aria-label="Open Klyra Weather">Open Weather</a>
+        </div>
+      </article>
+
+      <article class="app">
+        <div class="app-head">
+          <img src="/img/apps/contacts.png" alt="" width="56" height="56">
+          <div>
+            <h3>Klyra Contacts</h3>
+            <p class="platforms">Android only</p>
+          </div>
+        </div>
+        <p class="pitch">Your contacts and your phone: default dialer, call log, and end-to-end encrypted contact sync if you want it.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://contacts.klyra.cc" aria-label="Open Klyra Contacts">Get Contacts</a>
+        </div>
+      </article>
+
+      <article class="app">
+        <div class="app-head">
+          <img src="/img/apps/orbit.png" alt="" width="56" height="56">
+          <div>
+            <h3>Klyra Orbit</h3>
+            <p class="platforms">Android only</p>
+          </div>
+        </div>
+        <p class="pitch">Share your live location with the people you invite, end-to-end encrypted.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://orbit.klyra.cc" aria-label="Open Klyra Orbit">Get Orbit</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="privacy c-tint-lilac" aria-labelledby="p-title">
+    <h2 id="p-title">Private by design</h2>
+    <ul>
+      <li><b>End-to-end encrypted.</b> Your data is locked on your device. The server stores scrambled data and can't read it.</li>
+      <li><b>Your password stays with you.</b> It is turned into keys on your device. The real password never reaches our server.</li>
+      <li><b>One recovery key.</b> You get it when you create your account. Without your password and that key, nobody can restore your data, not even us.</li>
+      <li><b>No ads, no analytics, no trackers</b> on this site or in the apps.</li>
+    </ul>
+    <a class="btn ghost" href="/privacy/">Read the privacy page</a>
+  </section>
+
+  <section class="cta-band" aria-labelledby="c-title">
+    <h2 id="c-title">One account, all your Klyra apps</h2>
+    <p class="lead">Create your account here, or from inside any app. Manage your password and your account on the account page.</p>
+    <div class="cta">
+      <a class="btn primary big" href="/account/#/sign-in?mode=create">Create account</a>
+      <a class="btn ghost big" href="/account/#/sign-in">Login</a>
+    </div>
+    <p class="small">Stuck? See <a href="/support/">Support</a>.</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <nav aria-label="Footer">
+    <a href="/#apps">Apps</a>
+    <a href="/account/">Account</a>
+    <a href="/support/">Support</a>
+    <a href="/privacy/">Privacy</a>
+  </nav>
+  <p>Klyra makes private apps. Help: <a href="mailto:support@klyra.cc">support@klyra.cc</a> · Everything else: <a href="mailto:contact@klyra.cc">contact@klyra.cc</a></p>
+  <p class="small">Font: Nunito, SIL Open Font License.</p>
+</footer>
+</body>
+</html>
